@@ -1,0 +1,82 @@
+import { CheckIcon } from "~/components/icons/Check"
+import { CrossIcon } from "~/components/icons/Cross"
+import { PremiumIcon } from "~/components/icons/Premium"
+import { Button } from "~/components/ui/button"
+
+interface Feature {
+  label: string
+  included: boolean
+}
+
+interface Plan {
+  id: string
+  name: string
+  price: number
+  type: string
+  features: Feature[]
+  buttonText: string
+}
+
+interface FooterCardProps {
+  className?: string
+  plan: Plan
+}
+
+const FooterCard = ({ plan }: FooterCardProps) => {
+  return (
+    <div className="rounded-[28px] bg-white p-8 shadow-[-15px_50px_150px_0px_#3159D31F]">
+      <div className="flex items-center gap-8">
+        <div className="relative flex h-45 w-40 min-w-40 flex-col items-center justify-center rounded-[16px] bg-[#ECF2FF]">
+          {plan.name != "Free" && (
+            <div className="absolute -top-5.5 flex w-[calc(100%-10px)] items-center gap-3 rounded-full bg-[#C2EEFF] p-1 text-[#11142D] shadow-[0px_4px_4px_0px_#4391C135]">
+              <PremiumIcon className="h-full" />
+              <span className="text-base leading-3.75 font-semibold">
+                Premium
+              </span>
+            </div>
+          )}
+          <p
+            className={`text-[32px] leading-11.25 font-semibold ${plan.name === "Free" ? "text-[#52B4DA]" : "bg-[linear-gradient(129.98deg,#52B4DA_-106.35%,#1E3E85_95.25%)] bg-clip-text text-transparent"}`}
+          >
+            {plan.name === "Free" ? plan.type : `$${plan.price}`}
+          </p>
+          <p className="text-xl leading-8.75 font-medium text-[#11142D65]">
+            {plan.type}
+          </p>
+        </div>
+        <ul className="space-y-5">
+          {plan.features.map((feature, idx) => (
+            <li
+              key={idx}
+              className="flex items-start gap-3 text-base leading-6 font-medium"
+            >
+              {feature.included ? (
+                <CheckIcon className="mt-0.5 size-5 min-w-5" />
+              ) : (
+                <CrossIcon className="mt-0.5 size-5 min-w-5" />
+              )}
+              <span
+                className={
+                  feature.included ? "text-[#323445]" : "text-[#808191]"
+                }
+              >
+                {feature.label}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Button className="group mt-6.5 h-18 w-full rounded-[24px] bg-[linear-gradient(129.98deg,#52B4DA_-106.35%,#1E3E85_95.25%)] px-0 text-xl font-semibold text-white shadow-[10px_0px_50px_0px_#3159D347] hover:bg-[linear-gradient(309.98deg,#52B4DA_-106.35%,#1E3E85_95.25%)]">
+        {plan.name != "Free" ? (
+          plan.buttonText
+        ) : (
+          <div className="flex size-[calc(100%-2px)] items-center justify-center rounded-[22px] bg-white text-[#1E3E85] group-hover:bg-accent">
+            {plan.buttonText}
+          </div>
+        )}
+      </Button>
+    </div>
+  )
+}
+
+export default FooterCard
