@@ -10,7 +10,7 @@ const data = {
     "We don’t charge you fees and we don’t put up paywalls. We’re the bridge that connects job opportunities with the best candidates, with no middleman involved.",
   payment: {
     id: 1,
-    image: "/images/paypal.png",
+    image: "/images/paypal.webp",
     title: "14 Days - $79.99",
     name: "Upcoming Payment In…",
     yellowBorder: false,

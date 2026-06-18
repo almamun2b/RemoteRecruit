@@ -8,18 +8,18 @@ const data = {
   description:
     "RemoteRecruit connects candidates with opportunities around the world. With today’s remote-first workforce, you need to be able to find the best jobs and the best people for them, wherever they may be.",
   market: {
-    image: "/images/globalReach.png",
+    image: "/images/globalReach.webp",
     freelancers: [
       {
         id: 1,
-        image: "/images/gru.png",
+        image: "/images/gru.webp",
         title: "Python Developer",
         name: "Felonious Gru",
         yellowBorder: true,
       },
       {
         id: 2,
-        image: "/images/gru.png",
+        image: "/images/gru.webp",
         title: "Front End Wizard",
         name: "Mel Muselphiem",
         yellowBorder: true,

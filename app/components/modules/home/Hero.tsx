@@ -6,7 +6,7 @@ const data = {
 
 const Hero = () => {
   return (
-    <div className="flex min-h-176 w-full items-center justify-center bg-[url('/images/hero.png')] bg-cover bg-center">
+    <div className="flex min-h-176 w-full items-center justify-center bg-[url('/images/hero.webp')] bg-cover bg-center">
       <div className="flex size-full max-w-200 flex-col gap-4 text-center">
         <h1 className="text-[53px] leading-17 font-bold text-white">
           {data.title}

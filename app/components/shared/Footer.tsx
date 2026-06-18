@@ -40,7 +40,7 @@ const plans = [
 
 const Footer = () => {
   return (
-    <footer className="relative mt-109.5 flex min-h-142.5 w-full flex-col bg-[url('/images/footer.png')] bg-cover bg-center">
+    <footer className="relative mt-109.5 flex min-h-142.5 w-full flex-col bg-[url('/images/footer.webp')] bg-cover bg-center">
       <section className="absolute top-0 left-1/2 w-full max-w-260 -translate-x-1/2 -translate-y-1/2">
         <h3 className="text-center text-[40px] leading-13 font-semibold text-[#11142D]">
           Help Is One Click Away

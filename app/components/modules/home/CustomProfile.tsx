@@ -8,11 +8,11 @@ const data = {
   description:
     "Personalize your profile with everything that makes you unique. Add an introductory video and other media for a personal touch that stands out to employers and candidates.",
   profile: {
-    image: "/images/customProfile.png",
+    image: "/images/customProfile.webp",
     feedback: [
       {
         id: 1,
-        image: "/images/gru.png",
+        image: "/images/gru.webp",
         title: "Past Client Feedback",
         name: "Best Developer Ever!",
         yellowBorder: true,
@@ -38,7 +38,7 @@ const CustomProfile = () => {
           <div className="relative w-full">
             <div className="absolute -right-11.5 -bottom-11.5 flex size-22.75 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312]">
               <img
-                src="/images/gru.png"
+                src="/images/gru.webp"
                 width={75}
                 height={75}
                 alt="findWork"

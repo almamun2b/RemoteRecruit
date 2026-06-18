@@ -1,6 +1,5 @@
 import { CheckIcon } from "~/components/icons/Check"
 import { CrossIcon } from "~/components/icons/Cross"
-import { PremiumIcon } from "~/components/icons/Premium"
 import { Button } from "~/components/ui/button"
 
 interface Feature {
@@ -29,7 +28,13 @@ const FooterCard = ({ plan }: FooterCardProps) => {
         <div className="relative flex h-45 w-40 min-w-40 flex-col items-center justify-center rounded-[16px] bg-[#ECF2FF]">
           {plan.name != "Free" && (
             <div className="absolute -top-5.5 flex w-[calc(100%-10px)] items-center gap-3 rounded-full bg-[#C2EEFF] p-1 text-[#11142D] shadow-[0px_4px_4px_0px_#4391C135]">
-              <PremiumIcon className="h-full" />
+              <img
+                src="/icons/premium.webp"
+                width={36}
+                height={36}
+                alt="findWork"
+                className="size-9 min-w-9 rounded-full object-cover"
+              />
               <span className="text-base leading-3.75 font-semibold">
                 Premium
               </span>

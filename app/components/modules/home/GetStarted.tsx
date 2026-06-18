@@ -10,11 +10,11 @@ const data = {
 
 const GetStarted = () => {
   return (
-    <div className="mt-37 grid min-h-152.5 w-full grid-cols-1 bg-[url('/images/getStarted.png')] bg-cover bg-center lg:grid-cols-2">
+    <div className="mt-37 grid min-h-152.5 w-full grid-cols-1 bg-[url('/images/getStarted.webp')] bg-cover bg-center lg:grid-cols-2">
       <div className="mt-25.25 pr-4">
         <div className="mr-auto rounded-tr-[40px] bg-white pt-3 pr-4 shadow-[15.18px_44.45px_108.41px_0px_#3159D31F]">
           <img
-            src="/images/findWork.png"
+            src="/images/findWork.webp"
             width={676}
             height={496}
             alt="findWork"
