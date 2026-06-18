@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { CheckIcon } from "~/components/icons/Check"
 import { Icon } from "~/components/icons/Icon"
 import GruCard from "./GruCard"
@@ -34,9 +35,22 @@ const data = {
 const ActuallyFeeFree = () => {
   return (
     <div className="mx-auto mt-25 grid w-full max-w-260 grid-cols-1 items-center gap-10 lg:grid-cols-2">
-      <div className="mx-auto">
-        <div className="relative flex w-full min-w-88.75 flex-col rounded-[34px] border border-[#F6F4FF] bg-white p-8 pb-7 shadow-[14px_41px_100px_0px_#3159D31F]">
-          <div className="absolute top-0 -left-10 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]"></div>
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="mx-auto"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 40 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative flex w-full min-w-88.75 flex-col rounded-[34px] border border-[#F6F4FF] bg-white p-8 pb-7 shadow-[14px_41px_100px_0px_#3159D31F]"
+        >
+          <div className="absolute top-0 -left-10 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]" />
+
           <span className="text-sm leading-4.5 font-semibold tracking-[1px] text-[#808191]">
             {data.plan.subTitle}
           </span>
@@ -48,25 +62,58 @@ const ActuallyFeeFree = () => {
             <div className="absolute top-0 -right-16 flex size-22.75 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312]">
               <Icon className="h-auto w-12" />
             </div>
+
             <p className="text-[10px] leading-4.5 font-bold tracking-[1px] text-[#11142D82] uppercase">
               {data.plan.sectionTitle}
             </p>
-            <ul className="mt-3 space-y-5">
+
+            <motion.ul
+              className="mt-3 space-y-5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                visible: {
+                  transition: { staggerChildren: 0.1, delayChildren: 0.3 },
+                },
+              }}
+            >
               {data.plan.features.map((feature, index) => (
-                <li
+                <motion.li
                   key={index}
+                  variants={{
+                    hidden: { opacity: 0, x: -30 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.5 }}
                   className="flex items-center gap-3 text-sm leading-6 text-[#323445E6]"
                 >
                   <CheckIcon className="size-4 min-w-4" />
                   <p>{feature}</p>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
-          <GruCard gru={data.payment} className="mt-9.5 -ml-24" />
-        </div>
-      </div>
-      <SectionCard card={data} />
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <GruCard gru={data.payment} className="mt-9.5 -ml-24" />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
+        <SectionCard card={data} />
+      </motion.div>
     </div>
   )
 }

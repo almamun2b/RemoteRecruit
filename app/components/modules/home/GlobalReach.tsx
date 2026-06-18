@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { Icon } from "~/components/icons/Icon"
 import GruCard from "./GruCard"
 import SectionCard from "./SectionCard"
@@ -32,31 +33,65 @@ const data = {
 const GlobalReach = () => {
   return (
     <div className="mx-auto mt-25 grid w-full max-w-260 grid-cols-1 items-center gap-10 lg:grid-cols-2">
-      <SectionCard card={data} />
-      <div className="mx-auto">
-        <div className="relative flex max-w-88.75 flex-col gap-9 rounded-[34px] border border-[#F6F4FF] bg-white p-5 pb-9.25 shadow-[14px_41px_100px_0px_#3159D31F]">
-          <div className="absolute top-0 -left-10 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]"></div>
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <SectionCard card={data} />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+        className="mx-auto"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+          className="relative flex max-w-88.75 flex-col gap-9 rounded-[34px] border border-[#F6F4FF] bg-white p-5 pb-9.25 shadow-[14px_41px_100px_0px_#3159D31F]"
+        >
+          <div className="absolute top-0 -left-10 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]" />
+
           <div className="relative w-full">
-            <div className="absolute -right-11.5 -bottom-11.5 flex size-22.75 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312]">
+            <div className="absolute -right-11.5 -bottom-11.5 z-10 flex size-22.75 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312]">
               <Icon className="h-auto w-12" />
             </div>
-            <img
+
+            <motion.img
               src={data.market.image}
               width={315}
               height={176}
               alt="findWork"
               className="h-auto w-full rounded-[16px] object-cover"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             />
           </div>
+
           {data.market.freelancers.map((freelancer, index) => (
-            <GruCard
+            <motion.div
               key={freelancer.id}
-              gru={freelancer}
-              className={index === 0 ? "-ml-20" : "-mr-20"}
-            />
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+            >
+              <GruCard
+                gru={freelancer}
+                className={index === 0 ? "-ml-20" : "-mr-20"}
+              />
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   )
 }

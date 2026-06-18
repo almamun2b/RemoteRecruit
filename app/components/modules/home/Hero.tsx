@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 const data = {
   title: "RemoteRecruit’s Difference",
   description:
@@ -6,14 +8,27 @@ const data = {
 
 const Hero = () => {
   return (
-    <div className="flex min-h-176 w-full items-center justify-center bg-[url('/images/hero.webp')] bg-cover bg-center">
-      <div className="flex size-full max-w-200 flex-col gap-4 text-center">
-        <h1 className="text-[53px] leading-17 font-bold text-white">
+    <div className="relative flex min-h-176 w-full items-center justify-center overflow-hidden bg-[url('/images/hero.webp')] bg-cover bg-center">
+      <div className="flex size-full max-w-200 flex-col gap-4 px-6 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-[53px] leading-17 font-bold text-white"
+        >
           {data.title}
-        </h1>
-        <p className="text-xl leading-8 font-medium text-white/80">
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="text-xl leading-8 font-medium text-white/80"
+        >
           {data.description}
-        </p>
+        </motion.p>
       </div>
     </div>
   )
