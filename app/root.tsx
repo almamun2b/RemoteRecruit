@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root"
 import "./app.css"
+import ScrollToTop from "./components/shared/ScrollToTop"
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,6 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <ScrollToTop />
         <ScrollRestoration />
         <Scripts />
       </body>

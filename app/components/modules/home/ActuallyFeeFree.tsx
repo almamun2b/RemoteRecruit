@@ -12,8 +12,8 @@ const data = {
   payment: {
     id: 1,
     image: "/images/paypal.webp",
-    title: "14 Days - $79.99",
-    name: "Upcoming Payment In…",
+    title: "Upcoming Payment In…",
+    name: "14 Days - $79.99",
     yellowBorder: false,
     imageClass: "size-8 rounded-none",
   },

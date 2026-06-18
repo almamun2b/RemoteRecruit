@@ -9,7 +9,7 @@ const data = {
 const Hero = () => {
   return (
     <div className="relative flex min-h-176 w-full items-center justify-center overflow-hidden bg-[url('/images/hero.webp')] bg-cover bg-center xl:min-h-190 2xl:min-h-screen">
-      <div className="flex size-full max-w-200 flex-col gap-4 px-6 text-center">
+      <div className="flex size-full max-w-200 flex-col gap-4 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}

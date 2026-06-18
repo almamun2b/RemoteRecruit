@@ -48,7 +48,7 @@ const FooterCard = ({ plan }: FooterCardProps) => {
           className="relative flex h-45 w-40 min-w-40 flex-col items-center justify-center rounded-[16px] bg-[#ECF2FF]"
         >
           {plan.name !== "Free" && (
-            <div className="absolute -top-5.5 flex w-[calc(100%-10px)] items-center gap-3 rounded-full bg-[#C2EEFF] p-1 text-[#11142D] shadow-[0px_4px_4px_0px_#4391C135]">
+            <div className="absolute -top-5.5 flex w-[calc(100%-14px)] items-center gap-3 rounded-full bg-[#C2EEFF] p-1 text-[#11142D] shadow-[0px_4px_4px_0px_#4391C135]">
               <img
                 src="/icons/premium.webp"
                 width={36}
