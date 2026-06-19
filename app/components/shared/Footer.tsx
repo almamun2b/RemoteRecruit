@@ -39,6 +39,15 @@ const plans = [
   },
 ]
 
+const socialLinks = [
+  { IconComp: FacebookIcon, name: "Facebook" },
+  { IconComp: InstagramIcon, name: "Instagram" },
+  { IconComp: XIcon, name: "X (formerly Twitter)" },
+  { IconComp: TwitterIcon, name: "Twitter" },
+  { IconComp: LinkedinIcon, name: "LinkedIn" },
+  { IconComp: RedditIcon, name: "Reddit" },
+]
+
 const Footer = () => {
   return (
     <footer className="relative mt-50 flex min-h-auto w-full flex-col bg-[url('/images/footer.webp')] bg-cover bg-top bg-no-repeat md:mt-109.5 md:min-h-142.5">
@@ -101,14 +110,7 @@ const Footer = () => {
         <SiteLogo className="h-14 w-auto sm:h-18.5" />
 
         <div className="flex flex-wrap items-center justify-center gap-2.5">
-          {[
-            FacebookIcon,
-            InstagramIcon,
-            XIcon,
-            TwitterIcon,
-            LinkedinIcon,
-            RedditIcon,
-          ].map((IconComp, index) => (
+          {socialLinks.map((item, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.15 }}
@@ -117,8 +119,8 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 + index * 0.08 }}
             >
-              <Link to="/">
-                <IconComp className="hover:scale-110" />
+              <Link to="/" aria-label={`Visit our ${item.name} profile page`}>
+                <item.IconComp className="hover:scale-110" />
               </Link>
             </motion.div>
           ))}
