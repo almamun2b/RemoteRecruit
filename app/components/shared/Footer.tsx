@@ -50,7 +50,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative mt-50 flex min-h-auto w-full flex-col bg-[url('/images/footer.webp')] bg-cover bg-top bg-no-repeat md:mt-109.5 md:min-h-142.5">
+    <footer className="relative mt-50 flex min-h-auto w-full flex-col bg-[url('/images/footer.webp')] bg-cover bg-top bg-no-repeat md:mt-109.5 md:min-h-142.5 2xl:mt-120">
       <section className="relative top-0 left-0 mx-auto w-full max-w-260 translate-x-0 -translate-y-16 px-4 sm:-translate-y-24 md:absolute md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 xl:px-0">
         <motion.h3
           initial={{ opacity: 0, y: 50 }}
