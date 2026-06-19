@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import { CheckIcon } from "~/components/icons/Check";
-import { Icon } from "~/components/icons/Icon";
-import GruCard from "./GruCard";
-import SectionCard from "./SectionCard";
+import { motion } from "framer-motion"
+import { CheckIcon } from "~/components/icons/Check"
+import { Icon } from "~/components/icons/Icon"
+import GruCard from "./GruCard"
+import SectionCard from "./SectionCard"
 
 const data = {
   section: "Actually Fee Free",
@@ -30,29 +30,26 @@ const data = {
       "Unlimited invites to jobseekers",
     ],
   },
-};
+}
 
 const ActuallyFeeFree = () => {
   return (
-    <div className="mx-auto mt-16 sm:mt-25 grid w-full max-w-260 grid-cols-1 items-center gap-14 px-5 xl:px-0 lg:grid-cols-2">
-      
-      {/* Visual Card Wrapper - Shifts to position 2 (bottom) on mobile, restores to position 1 (left) on desktop */}
+    <div className="mx-auto mt-16 grid w-full max-w-260 grid-cols-1 items-center gap-14 px-5 sm:mt-25 lg:grid-cols-2 xl:px-0">
       <motion.div
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mx-auto w-full flex justify-center order-2 lg:order-1"
+        className="order-2 mx-auto flex w-full justify-center lg:order-1"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 40 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative flex w-full sm:max-w-88.75 sm:min-w-88.75 flex-col rounded-[34px] border border-[#F6F4FF] bg-white p-6 sm:p-8 pb-7 shadow-[14px_41px_100px_0px_#3159D31F]"
+          className="relative flex w-full flex-col rounded-[34px] border border-[#F6F4FF] bg-white p-6 pb-7 shadow-[14px_41px_100px_0px_#3159D31F] sm:max-w-88.75 sm:min-w-88.75 sm:p-8"
         >
-          {/* Prevented the absolute dot layout from sliding off-screen on tiny viewports */}
-          <div className="absolute top-0 -left-3 sm:-left-10 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]" />
+          <div className="absolute top-0 -left-3 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] sm:-left-10" />
 
           <span className="text-sm leading-4.5 font-semibold tracking-[1px] text-[#808191]">
             {data.plan.subTitle}
@@ -62,8 +59,7 @@ const ActuallyFeeFree = () => {
           </p>
 
           <div className="relative mt-5 w-full">
-            {/* Responsively scaled down the absolute badge breakout for mobile viewports */}
-            <div className="absolute top-0 -right-4 sm:-right-16 flex size-16 sm:size-22.75 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312]">
+            <div className="absolute top-0 -right-4 flex size-16 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312] sm:-right-16 sm:size-22.75">
               <Icon className="h-auto w-8 sm:w-12" />
             </div>
 
@@ -105,28 +101,25 @@ const ActuallyFeeFree = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            {/* Scaled horizontal negative breakout offsets safely to fit within mobile screen borders */}
-            {/* Note: Associated image alt attributes are handled contextually inside GruCard component */}
-            <GruCard 
-              gru={data.payment} 
-              className="mt-9.5 -ml-4 min-[400px]:-ml-12 sm:-ml-20 lg:-ml-24" 
+            <GruCard
+              gru={data.payment}
+              className="mt-9.5 -ml-4 min-[400px]:-ml-12 sm:-ml-20 lg:-ml-24"
             />
           </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* Text Content Wrapper - Shifts to position 1 (top) and centers text below lg breakpoint */}
       <motion.div
         initial={{ opacity: 0, x: 60 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="flex flex-col items-center text-center lg:items-start lg:text-left w-full mx-auto lg:mx-0 order-1 lg:order-2"
+        className="order-1 mx-auto flex w-full flex-col items-center text-center lg:order-2 lg:mx-0 lg:items-start lg:text-left"
       >
         <SectionCard card={data} />
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default ActuallyFeeFree;
+export default ActuallyFeeFree

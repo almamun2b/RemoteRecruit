@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
-import { PlayIcon } from "~/components/icons/Play";
-import GruCard from "./GruCard";
-import SectionCard from "./SectionCard";
+import { motion } from "framer-motion"
+import { PlayIcon } from "~/components/icons/Play"
+import GruCard from "./GruCard"
+import SectionCard from "./SectionCard"
 
 const data = {
   section: "Custom Profile",
@@ -27,50 +27,45 @@ const data = {
       "IOS Development",
     ],
   },
-};
+}
 
 const CustomProfile = () => {
   return (
-    <div className="mx-auto mt-16 sm:mt-25 grid w-full max-w-260 grid-cols-1 items-center gap-14 px-5 xl:px-0 lg:grid-cols-2">
-      
-      {/* Left Side - Text Wrapper (Centered below lg, resets to left-aligned on desktop) */}
+    <div className="mx-auto mt-16 grid w-full max-w-260 grid-cols-1 items-center gap-14 px-5 sm:mt-25 lg:grid-cols-2 xl:px-0">
       <motion.div
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col items-center text-center lg:items-start lg:text-left w-full mx-auto lg:mx-0 order-1"
+        className="order-1 mx-auto flex w-full flex-col items-center text-center lg:mx-0 lg:items-start lg:text-left"
       >
         <SectionCard card={data} />
       </motion.div>
 
-      {/* Right Side - Visual Card Wrapper */}
       <motion.div
         initial={{ opacity: 0, x: 60 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-        className="mx-auto w-full flex justify-center order-2"
+        className="order-2 mx-auto flex w-full justify-center"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 40 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative flex w-full sm:max-w-88.75 flex-col gap-9 rounded-[34px] border border-[#F6F4FF] bg-white p-5 pb-9.25 shadow-[14px_41px_100px_0px_#3159D31F]"
+          className="relative flex w-full flex-col gap-9 rounded-[34px] border border-[#F6F4FF] bg-white p-5 pb-9.25 shadow-[14px_41px_100px_0px_#3159D31F] sm:max-w-88.75"
         >
-          {/* Prevented the absolute dot layout from sliding off-screen on tiny viewports */}
-          <div className="absolute top-0 -left-3 sm:-left-10 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]" />
+          <div className="absolute top-0 -left-3 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] sm:-left-10" />
 
           <div className="relative w-full">
-            {/* Responsively scaled down the absolute avatar breakout for mobile viewports */}
-            <div className="absolute -right-4 -bottom-4 sm:-right-11.5 sm:-bottom-11.5 z-10 flex size-16 sm:size-22.75 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312]">
+            <div className="absolute -right-4 -bottom-4 z-10 flex size-16 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312] sm:-right-11.5 sm:-bottom-11.5 sm:size-22.75">
               <img
                 src="/images/gru.webp"
                 width={75}
                 height={75}
                 alt="Client profile thumbnail avatar"
-                className="size-12 sm:size-18.75 rounded-full object-cover"
+                className="size-12 rounded-full object-cover sm:size-18.75"
               />
             </div>
 
@@ -89,7 +84,6 @@ const CustomProfile = () => {
             />
           </div>
 
-          {/* Feedback Card */}
           {data.profile.feedback.map((freelancer) => (
             <motion.div
               key={freelancer.id}
@@ -98,15 +92,13 @@ const CustomProfile = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              {/* Scaled horizontal negative breakout offsets safely to fit within mobile screen borders */}
-              <GruCard 
-                gru={freelancer} 
-                className="-ml-4 min-[400px]:-ml-12 sm:-ml-20" 
+              <GruCard
+                gru={freelancer}
+                className="-ml-4 min-[400px]:-ml-12 sm:-ml-20"
               />
             </motion.div>
           ))}
 
-          {/* Technology Tags */}
           <motion.ul
             className="flex flex-wrap items-center gap-2.5 sm:gap-4"
             initial="hidden"
@@ -149,7 +141,7 @@ const CustomProfile = () => {
         </motion.div>
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default CustomProfile;
+export default CustomProfile

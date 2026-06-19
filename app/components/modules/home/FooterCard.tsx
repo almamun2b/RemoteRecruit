@@ -37,10 +37,9 @@ const FooterCard = ({ plan }: FooterCardProps) => {
           ease: "easeOut",
         },
       }}
-      className="rounded-[28px] bg-white p-6 sm:p-8 shadow-[-15px_50px_150px_0px_#3159D31F] h-full flex flex-col justify-between"
+      className="flex h-full flex-col justify-between rounded-[28px] bg-white p-6 shadow-[-15px_50px_150px_0px_#3159D31F] sm:p-8"
     >
-      {/* Stack vertically on mobile, shift back to horizontal row on tablet and desktop */}
-      <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 sm:gap-8">
+      <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:gap-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -78,7 +77,7 @@ const FooterCard = ({ plan }: FooterCardProps) => {
         </motion.div>
 
         <motion.ul
-          className="space-y-5 w-full sm:w-auto"
+          className="w-full space-y-5 sm:w-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
