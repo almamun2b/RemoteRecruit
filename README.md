@@ -20,7 +20,7 @@ The core stack was selected to achieve optimal runtime performance, fast develop
 ## ✨ Key Features & Implementations
 
 - **Pixel-Perfect Figma Fidelity:** Meticulously matched all custom margins, line-height structures, letter-spacing patterns, and gradient overlay borders across all layout viewports.
-- **Advanced Mobile & Tablet Responsiveness:** Handled complex structural transformations across smaller screens. Layout blocks adapt smoothly from horizontal dual-column structures into beautifully centered vertical sequences—shifting textual content stacks safely to the top while scaling out internal absolute-positioned badge elements to prevent horizontal scroll leakage.
+- **Advanced Mobile, Tablet & Desktop Responsiveness:** Handled complex structural transformations across smaller screens. Layout blocks adapt smoothly from horizontal dual-column structures into beautifully centered vertical sequences—shifting textual content stacks safely to the top while scaling out internal absolute-positioned badge elements to prevent horizontal scroll leakage.
 - **Fluid Framer Motion Reveals:** Integrated targeted viewport visibility checks using custom stagger rules, slide-ups, and smooth fade triggers ensuring zero animation frame skips.
 - **Scroll-to-Top Navigation:** Smooth-scrolling functionality tied into footer interaction workflows.
 
