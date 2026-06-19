@@ -41,20 +41,23 @@ const plans = [
 
 const Footer = () => {
   return (
-    <footer className="relative mt-109.5 flex min-h-142.5 w-full flex-col bg-[url('/images/footer.webp')] bg-cover bg-center">
-      <section className="absolute top-0 left-1/2 w-full max-w-260 -translate-x-1/2 -translate-y-1/2">
+    /* mt-24 prevents section overlapping on mobile, safely restoring mt-109.5 on desktop */
+    <footer className="relative mt-50 md:mt-109.5 flex min-h-auto md:min-h-142.5 w-full flex-col bg-[url('/images/footer.webp')] bg-cover bg-top bg-no-repeat">
+      
+      {/* Flow context changes from relative (mobile) to absolute (desktop) to handle layout height changes safely */}
+      <section className="relative top-0 left-0 translate-x-0 -translate-y-16 sm:-translate-y-24 mx-auto w-full max-w-260 px-4 md:absolute md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 xl:px-0">
         <motion.h3
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8 }}
-          className="text-center text-[40px] leading-13 font-semibold text-[#11142D]"
+          className="text-center text-3xl sm:text-[40px] leading-tight md:leading-13 font-semibold text-[#11142D]"
         >
           Help Is One Click Away
         </motion.h3>
 
         <motion.div
-          className="grid w-full grid-cols-1 gap-10 pt-12.5 md:grid-cols-2"
+          className="grid w-full grid-cols-1 gap-10 pt-8 md:pt-12.5 md:grid-cols-2"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
@@ -91,16 +94,17 @@ const Footer = () => {
 
       <div className="flex-1" />
 
+      {/* Grid container elements wrap to columns on small viewports and return to horizontal justification on desktop */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="mx-auto flex w-full max-w-260 items-center justify-between py-25"
+        className="mx-auto flex w-full max-w-260 flex-col items-center gap-8 px-4 py-12 md:flex-row md:justify-between md:gap-0 xl:px-0 md:py-25"
       >
-        <SiteLogo className="h-18.5 w-auto" />
+        <SiteLogo className="h-14 sm:h-18.5 w-auto" />
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex flex-wrap justify-center items-center gap-2.5">
           {[
             FacebookIcon,
             InstagramIcon,

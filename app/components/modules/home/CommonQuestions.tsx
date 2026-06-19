@@ -1,5 +1,5 @@
-import { motion } from "framer-motion"
-import { Button } from "~/components/ui/button"
+import { motion } from "framer-motion";
+import { Button } from "~/components/ui/button";
 
 const faqData = [
   {
@@ -20,23 +20,25 @@ const faqData = [
     answer:
       "Actually beard single-origin coffee, twee 90's PBR Echo Park sartorial try-hard freegan Portland ennui. Selvage jean shorts 90's, Vice American Apparel try-hard food truck Shoreditch fap lomo Wes Anderson. Art party",
   },
-]
+];
 
 const CommonQuestions = () => {
   return (
-    <section className="mx-auto mt-37 w-full max-w-260">
+    <section className="mx-auto mt-16 sm:mt-25 lg:mt-37 w-full max-w-260 px-5 xl:px-0">
+      
+      {/* Centered for mobile/tablet, native left-aligned on desktop */}
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="text-[40px] leading-13 font-medium text-[#11142D]"
+        className="text-center lg:text-left text-3xl font-medium leading-tight text-[#11142D] sm:text-4xl md:text-[40px] md:leading-13"
       >
         Common Questions
       </motion.h2>
 
       <motion.div
-        className="mt-15 space-y-10"
+        className="mt-10 sm:mt-15 space-y-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -57,29 +59,34 @@ const CommonQuestions = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-[19px] leading-8.75"
+            className="text-[17px] leading-relaxed sm:text-[19px] sm:leading-8.75"
           >
             <h3 className="mb-3 font-medium text-[#11142D]">{item.question}</h3>
-            <p className="font-normal text-[#6D6E7A]">{item.answer}</p>
+            {/* Added mx-auto for mobile layout centering, resets with lg:mx-0 */}
+            <p className="font-normal text-[#6D6E7A] mx-auto lg:mx-0">
+              {item.answer}
+            </p>
           </motion.div>
         ))}
       </motion.div>
 
+      {/* Button container centers the CTA on smaller screens, returns to left-start on desktop */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.6 }}
+        className="flex justify-center lg:justify-start"
       >
         <Button
-          className="mt-15 h-16.5 border-2 border-[#53B4DAB1] px-7.5 text-base leading-5.25 font-semibold text-[#1E3E85] hover:bg-[#53B4DA]/20"
+          className="mt-10 sm:mt-15 h-16.5 w-full max-w-70 border-2 border-[#53B4DAB1] px-7.5 text-base leading-5.25 font-semibold text-[#1E3E85] hover:bg-[#53B4DA]/20 lg:w-auto"
           variant="outline"
         >
           More Questions
         </Button>
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default CommonQuestions
+export default CommonQuestions;

@@ -1,7 +1,7 @@
-import { motion } from "framer-motion"
-import { Icon } from "~/components/icons/Icon"
-import GruCard from "./GruCard"
-import SectionCard from "./SectionCard"
+import { motion } from "framer-motion";
+import { Icon } from "~/components/icons/Icon";
+import GruCard from "./GruCard";
+import SectionCard from "./SectionCard";
 
 const data = {
   section: "Global Reach",
@@ -28,16 +28,19 @@ const data = {
       },
     ],
   },
-}
+};
 
 const GlobalReach = () => {
   return (
-    <div className="mx-auto mt-25 grid w-full max-w-260 grid-cols-1 items-center gap-10 lg:grid-cols-2">
+    <div className="mx-auto mt-16 sm:mt-25 grid w-full max-w-260 grid-cols-1 items-center gap-14 lg:grid-cols-2 px-5 xl:px-0">
+      
+      {/* Centered the SectionCard container and typography below the lg breakpoint */}
       <motion.div
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        className="flex flex-col items-center text-center lg:items-start lg:text-left w-full mx-auto lg:mx-0"
       >
         <SectionCard card={data} />
       </motion.div>
@@ -47,27 +50,27 @@ const GlobalReach = () => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-        className="mx-auto"
+        className="mx-auto w-full flex justify-center"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-          className="relative flex max-w-88.75 flex-col gap-9 rounded-[34px] border border-[#F6F4FF] bg-white p-5 pb-9.25 shadow-[14px_41px_100px_0px_#3159D31F]"
+          className="relative flex w-full sm:max-w-88.75 flex-col gap-9 rounded-[34px] border border-[#F6F4FF] bg-white p-5 pb-9.25 shadow-[14px_41px_100px_0px_#3159D31F]"
         >
-          <div className="absolute top-0 -left-10 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]" />
+          <div className="absolute top-0 -left-3 sm:-left-10 size-5.5 rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]" />
 
           <div className="relative w-full">
-            <div className="absolute -right-11.5 -bottom-11.5 z-10 flex size-22.75 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312]">
-              <Icon className="h-auto w-12" />
+            <div className="absolute -right-4 -bottom-4 sm:-right-11.5 sm:-bottom-11.5 z-10 flex size-16 sm:size-22.75 items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[14px_41px_50px_0px_#3159D312]">
+              <Icon className="h-auto w-8 sm:w-12" />
             </div>
 
             <motion.img
               src={data.market.image}
               width={315}
               height={176}
-              alt="findWork"
+              alt="World map illustration detailing interconnected global candidate networks"
               className="h-auto w-full rounded-[16px] object-cover"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -86,14 +89,18 @@ const GlobalReach = () => {
             >
               <GruCard
                 gru={freelancer}
-                className={index === 0 ? "-ml-20" : "-mr-20"}
+                className={
+                  index === 0 
+                    ? "-ml-4 min-[400px]:-ml-12 sm:-ml-20" 
+                    : "-mr-4 min-[400px]:-mr-12 sm:-mr-20"
+                }
               />
             </motion.div>
           ))}
         </motion.div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default GlobalReach
+export default GlobalReach;
