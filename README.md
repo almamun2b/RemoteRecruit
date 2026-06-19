@@ -38,7 +38,7 @@ Follow these step-by-step commands to clone and run the production suite locally
 
 ### Prerequisites
 
-Ensure you have Node.js (v18+) and npm (or yarn/pnpm) installed.
+Ensure you have Node.js (v18+) and pnpm (or npm/yarn/pnpm) installed.
 
 ### 1. Clone the repository
 
@@ -50,13 +50,13 @@ cd RemoteRecruit
 ### 2. Install dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### 3. Start the local development server
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open the local URL specified in your console to view the application in your browser.
@@ -66,7 +66,7 @@ Open the local URL specified in your console to view the application in your bro
 To generate a fully optimized build artifact:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 ## ⚠️ Known Issues & Limitations
