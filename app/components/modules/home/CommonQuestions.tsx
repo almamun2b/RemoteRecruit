@@ -24,7 +24,7 @@ const faqData = [
 
 const CommonQuestions = () => {
   return (
-    <section className="mx-auto mt-16 w-full max-w-260 px-5 sm:mt-25 lg:mt-37 xl:px-0">
+    <section className="mx-auto mt-16 w-full max-w-260 px-5 sm:mt-25 lg:mt-37 xl:px-0 2xl:mt-50">
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

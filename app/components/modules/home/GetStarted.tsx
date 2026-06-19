@@ -11,7 +11,7 @@ const data = {
 
 const GetStarted = () => {
   return (
-    <div className="mt-16 grid min-h-152.5 w-full grid-cols-1 overflow-hidden bg-[url('/images/getStarted.webp')] bg-cover bg-center sm:mt-25 lg:mt-37 lg:grid-cols-2">
+    <div className="mt-16 grid min-h-152.5 w-full grid-cols-1 overflow-hidden bg-[url('/images/getStarted.webp')] bg-cover bg-center sm:mt-25 lg:mt-37 lg:grid-cols-2 2xl:mt-50">
       <motion.div
         initial={{ opacity: 0, x: -80 }}
         whileInView={{ opacity: 1, x: 0 }}

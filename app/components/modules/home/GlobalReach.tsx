@@ -32,7 +32,7 @@ const data = {
 
 const GlobalReach = () => {
   return (
-    <div className="mx-auto mt-16 grid w-full max-w-260 grid-cols-1 items-center gap-14 px-5 sm:mt-25 lg:grid-cols-2 xl:px-0">
+    <div className="mx-auto mt-16 grid w-full max-w-260 grid-cols-1 items-center gap-14 px-5 sm:mt-25 lg:grid-cols-2 xl:px-0 2xl:mt-40">
       <motion.div
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
